@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiArrowUp, FiArrowDown, FiRefreshCw } from 'react-icons/fi';
 import { PieChart, Pie, Cell, Tooltip } from 'recharts';
+import BankingOperations from './BankingOperations';
 
 const walletData = [
   { name: 'Bitcoin', value: 5000, amount: 0.1, color: '#F7931A' },
@@ -107,6 +108,10 @@ export default function CryptoDashboard() {
             );
           })}
         </div>
+      </div>
+
+      <div className="mt-6">
+        <BankingOperations />
       </div>
     </div>
   );

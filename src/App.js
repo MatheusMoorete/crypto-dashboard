@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import SidebarLayout from './components/SidebarLayout';
 import CryptoDashboard from './components/CryptoDashboard';
 import InvestCryptoPage from './components/InvestCryptoPage';
+import BankingOperations from './components/BankingOperations';
 import LoginPage from './components/LoginPage';
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleLogin = (authStatus: boolean) => {
+  const handleLogin = (authStatus) => {
     setIsAuthenticated(authStatus);
   };
 
@@ -35,6 +36,7 @@ export default function App() {
                 <Routes>
                   <Route path="/dashboard" element={<CryptoDashboard />} />
                   <Route path="/investir" element={<InvestCryptoPage />} />
+                  <Route path="/banking" element={<BankingOperations />} />
                   <Route path="*" element={<Navigate to="/dashboard" replace />} />
                 </Routes>
               </SidebarLayout>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { FiHome, FiTrendingUp, FiChevronLeft, FiChevronRight, FiLogOut } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
+import { FiHome, FiTrendingUp, FiDollarSign, FiChevronLeft, FiChevronRight, FiLogOut } from 'react-icons/fi';
 
 interface SidebarLayoutProps {
   children: React.ReactNode;
@@ -9,15 +9,9 @@ interface SidebarLayoutProps {
 
 export default function SidebarLayout({ children, onLogout }: SidebarLayoutProps) {
   const [isSidebarExpanded, setIsSidebarExpanded] = useState(true);
-  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setIsSidebarExpanded((prev) => !prev);
-  };
-
-  const handleLogout = () => {
-    onLogout();
-    navigate('/login');
   };
 
   return (
@@ -67,8 +61,21 @@ export default function SidebarLayout({ children, onLogout }: SidebarLayoutProps
               Investir
             </span>
           </Link>
+          <Link
+            to="/banking"
+            className="flex items-center p-2 rounded hover:bg-gray-700"
+          >
+            <FiDollarSign className="mr-2" />
+            <span
+              className={`transition-opacity duration-300 ${
+                isSidebarExpanded ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              Operações Bancárias
+            </span>
+          </Link>
           <button
-            onClick={handleLogout}
+            onClick={onLogout}
             className="flex items-center p-2 rounded hover:bg-gray-700 w-full text-left"
           >
             <FiLogOut className="mr-2" />

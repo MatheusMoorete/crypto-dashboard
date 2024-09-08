@@ -78,7 +78,7 @@ export default function InvestCryptoPage() {
   const [investmentAmount, setInvestmentAmount] = useState('');
   const [activeSection, setActiveSection] = useState('buy');
 
-  const handleInvest = (action: string) => {
+  const handleInvest = (action) => {
     alert(`Você ${action} ${investmentAmount} em ${selectedCrypto}`);
   };
 
@@ -90,13 +90,13 @@ export default function InvestCryptoPage() {
 
       <div className="flex justify-center mb-6">
         <button
-          className={`px-4 py-2 mx-2 ${activeSection === 'buy' ? 'bg-blue-500 text-white' : 'bg-gray-300 text-black'}`}
+          className={`px-4 py-2 mx-2 ${activeSection === 'buy' ? 'bg-black text-white' : 'bg-white text-black'}`}
           onClick={() => setActiveSection('buy')}
         >
           Comprar
         </button>
         <button
-          className={`px-4 py-2 mx-2 ${activeSection === 'sell' ? 'bg-red-500 text-white' : 'bg-gray-300 text-black'}`}
+          className={`px-4 py-2 mx-2 ${activeSection === 'sell' ? 'bg-black text-white' : 'bg-white text-black'}`}
           onClick={() => setActiveSection('sell')}
         >
           Vender
@@ -116,7 +116,7 @@ export default function InvestCryptoPage() {
               return (
                 <li
                   key={coin}
-                  className={`p-4 rounded-lg cursor-pointer ${selectedCrypto === coin ? 'bg-blue-100' : 'bg-white'}`}
+                  className={`p-4 rounded-lg cursor-pointer ${selectedCrypto === coin ? 'bg-gray-100' : 'bg-white'}`}
                   onClick={() => setSelectedCrypto(coin)}
                 >
                   <div className="flex justify-between items-center">
@@ -169,7 +169,7 @@ export default function InvestCryptoPage() {
             <button
               type="submit"
               className={`${
-                activeSection === 'buy' ? 'bg-green-500 hover:bg-green-600' : 'bg-red-500 hover:bg-red-600'
+                activeSection === 'buy' ? 'bg-black hover:bg-gray-800' : 'bg-white text-black hover:bg-gray-100'
               } text-white px-4 py-2 rounded flex items-center`}
             >
               {activeSection === 'buy' ? <FiArrowUp className="mr-2" /> : <FiArrowDown className="mr-2" />}

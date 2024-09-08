@@ -27,7 +27,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
       <div className="max-w-md w-full space-y-8">
         <div>
           <h1 className="mt-6 text-center text-4xl font-extrabold text-gray-900">
-            Bem-vindo à Crypto Wallet
+            Bem-vindo
           </h1>
           <p className="mt-2 text-center text-sm text-gray-600">
             Faça seu login
